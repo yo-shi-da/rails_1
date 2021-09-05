@@ -5,11 +5,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
+  
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <p>TwitterCloneアプリケーションのHeader</p>
+      <img src="/assets/twitter_clone.jpg" alt="">
+      <hr>
+    </header>
+      <%= yield %>
+    <footer>
+      <hr>
+      <p>TwitterCloneアプリケーションFooter</p>
+      <img src="/assets/twitter_clone.jpg" alt="">
+    </footer>
   </body>
 </html>
