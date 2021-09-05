@@ -1,2 +1,20 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Topページ</h1>
+<h2>TwitterCloneアプリケーション</h2>
+
+<p><%= notice %></p>
+
+<table>
+  <tr>
+    <th>投稿一覧</th>
+  </tr>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.content %></td>
+    <td><%= link_to '投稿の詳細', post_path(post.id), class:"btn btn-secondary" %></td>
+    <td><%= link_to "投稿を編集", edit_post_path(post.id), class:"btn btn-secondary" %></td>
+    <td><%= link_to '投稿を削除', post_path(post.id), class:"btn btn-secondary", method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+<br>
+<%= link_to '新しく投稿する', new_post_path, class:"btn btn-primary" %>
