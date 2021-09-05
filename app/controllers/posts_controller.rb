@@ -44,6 +44,11 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: "削除しました。"
   end
 
+  def confirm
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
+  end
+
   private
   
   def post_params
@@ -53,5 +58,6 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
+
 
 end
